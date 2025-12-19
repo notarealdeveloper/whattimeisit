@@ -1,10 +1,10 @@
-# test_whattimeisit.py
+# test_tmstr.py
 
 import pytest
 from datetime import datetime, timedelta
 
-from whattimeisit import Date, Range, parse
-from whattimeisit.text2num import text2num
+from tmstr import Date, Range, parse
+from tmstr.text2num import text2num
 
 
 def assert_dt_parts(

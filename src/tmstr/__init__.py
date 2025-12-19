@@ -24,7 +24,7 @@ try:
     the adapters for Date and Range.
 
     >>> db.mogrify("insert into my_table (range) values (%s);", 
-                   whattimeisit.Range("next week"))
+                   tmstr.Range("next week"))
     "insert into my_table (range) values (tstzrange('2014-03-03 00:00:00'::timestamptz, '2014-03-10 00:00:00'::timestamptz));"
     """ 
     from psycopg2.extensions import register_adapter
@@ -50,12 +50,12 @@ except ImportError:
 
 
 def findall(text):
-    """Find all the whattimeisits within a block of text.
+    """Find all the tmstrs within a block of text.
 
-    >>> whattimeisit.findall("once upon a time, about 3 weeks ago, there was a boy whom was born on august 15th at 7:20 am. epic.")
+    >>> tmstr.findall("once upon a time, about 3 weeks ago, there was a boy whom was born on august 15th at 7:20 am. epic.")
     [
-     ('3 weeks ago,', <whattimeisit.Date 2014-02-09 00:00:00 4483019280>),
-     ('august 15th at 7:20 am', <whattimeisit.Date 2014-08-15 07:20:00 4483019344>)
+     ('3 weeks ago,', <tmstr.Date 2014-02-09 00:00:00 4483019280>),
+     ('august 15th at 7:20 am', <tmstr.Date 2014-08-15 07:20:00 4483019344>)
     ]
     """
     results = TIMESTRING_RE.findall(text)
@@ -93,11 +93,11 @@ def now():
 
 
 def main():
-    parser = argparse.ArgumentParser(prog='whattimeisit',
+    parser = argparse.ArgumentParser(prog='tmstr',
                                      add_help=True,
                                      formatter_class=argparse.RawDescriptionHelpFormatter,
                                      epilog=""" """)
-    parser.add_argument('--version', action='version', version="whattimeisit v%s - http://github.com/stevepeak/whattimeisit" % version)
+    parser.add_argument('--version', action='version', version="tmstr v%s - http://github.com/stevepeak/tmstr" % version)
     parser.add_argument('-d', '--date', action='store_true')
     parser.add_argument('--verbose', '-v', action="store_true", help="Verbose mode")
     parser.add_argument('args', nargs="+", help="Time input")

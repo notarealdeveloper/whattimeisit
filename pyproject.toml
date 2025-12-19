@@ -1,5 +1,5 @@
 [project]
-name = "whattimeisit"
+name = "tmstr"
 version = "0.0.1"
 authors = [
     { name="Steve Peak", email="hello@codecov.io" },
@@ -17,4 +17,4 @@ develop = [
 ]
 
 [project.urls]
-source = "https://github.com/notarealdeveloper/whattimeisit"
+source = "https://github.com/notarealdeveloper/tmstr"

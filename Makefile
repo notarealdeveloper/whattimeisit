@@ -1,4 +1,4 @@
-PKG := whattimeisit
+PKG := tmstr
 
 build:
 	pip install build
