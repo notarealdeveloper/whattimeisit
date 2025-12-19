@@ -5,7 +5,7 @@ from datetime import datetime
 
 from timestr.Date import Date
 from timestr import TimestringInvalid
-from timestr.timestr_re import TIMESTRING_RE
+from timestr.timestregex import TIMESTRING_RE
 
 try:
     unicode

@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 
 from timestr.text2num import text2num
 from timestr import TimestringInvalid
-from timestr.timestr_re import TIMESTRING_RE
+from timestr.timestregex import TIMESTRING_RE
 
 try:
     unicode

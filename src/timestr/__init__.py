@@ -16,7 +16,7 @@ class TimestringInvalid(Exception):
 
 from .Date import Date
 from .Range import Range
-from .timestr_re import TIMESTRING_RE
+from .timestregex import TIMESTRING_RE
 
 
 try:
