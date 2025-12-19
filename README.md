@@ -1,4 +1,4 @@
-# timestuff
+# whattimeisit
 
 Forked from the abandoned [timestring](https://github.com/codecov/timestring) project.
 

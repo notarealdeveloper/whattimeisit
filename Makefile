@@ -1,4 +1,4 @@
-PKG := timestuff
+PKG := whattimeisit
 
 build:
 	pip install build
