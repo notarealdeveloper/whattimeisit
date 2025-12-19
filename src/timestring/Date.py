@@ -4,9 +4,9 @@ import pytz
 from copy import copy
 from datetime import datetime, timedelta
 
-from timestring.text2num import text2num
-from timestring import TimestringInvalid
-from timestring.timestring_re import TIMESTRING_RE
+from timestr.text2num import text2num
+from timestr import TimestringInvalid
+from timestr.timestr_re import TIMESTRING_RE
 
 try:
     unicode
@@ -218,7 +218,7 @@ class Date(object):
                 self.date = self.date.replace(**offset)
 
     def __repr__(self):
-        return "<timestring.Date %s %s>" % (str(self), id(self))
+        return "<timestr.Date %s %s>" % (str(self), id(self))
 
     @property
     def year(self):

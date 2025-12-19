@@ -3,9 +3,9 @@ import pytz
 from copy import copy
 from datetime import datetime
 
-from timestring.Date import Date
-from timestring import TimestringInvalid
-from timestring.timestring_re import TIMESTRING_RE
+from timestr.Date import Date
+from timestr import TimestringInvalid
+from timestr.timestr_re import TIMESTRING_RE
 
 try:
     unicode
@@ -16,7 +16,7 @@ except NameError:
 
 class Range(object):
     def __init__(self, start, end=None, offset=None, start_of_week=0, tz=None, verbose=False):
-        """`start` can be type <class timestring.Date> or <type str>
+        """`start` can be type <class timestr.Date> or <type str>
         """
         self._dates = []
         pgoffset = None
@@ -147,7 +147,7 @@ class Range(object):
                     end = start + '1 day'
 
             else:
-                raise TimestringInvalid("Invalid timestring request")
+                raise TimestringInvalid("Invalid timestr request")
 
 
             if end is None:
@@ -169,7 +169,7 @@ class Range(object):
             self._dates = (self._dates[0], self._dates[1] + '1 day')
 
     def __repr__(self):
-        return "<timestring.Range %s %s>" % (str(self), id(self))
+        return "<timestr.Range %s %s>" % (str(self), id(self))
 
     def __getitem__(self, index):
         return self._dates[index]

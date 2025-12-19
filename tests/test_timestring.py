@@ -1,10 +1,10 @@
-# test_timestring.py
+# test_timestr.py
 
 import pytest
 from datetime import datetime, timedelta
 
-from timestring import Date, Range, parse
-from timestring.text2num import text2num
+from timestr import Date, Range, parse
+from timestr.text2num import text2num
 
 
 def assert_dt_parts(

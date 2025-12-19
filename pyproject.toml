@@ -1,5 +1,5 @@
 [project]
-name = "timestring"
+name = "timestr"
 version = "1.6.4"
 authors = [
     { name="@stevepeak", email="hello@codecov.io" },
@@ -17,4 +17,4 @@ develop = [
 ]
 
 [project.urls]
-source = "https://github.com/notarealdeveloper/timestring"
+source = "https://github.com/notarealdeveloper/timestr"

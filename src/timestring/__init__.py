@@ -16,7 +16,7 @@ class TimestringInvalid(Exception):
 
 from .Date import Date
 from .Range import Range
-from .timestring_re import TIMESTRING_RE
+from .timestr_re import TIMESTRING_RE
 
 
 try:
@@ -26,7 +26,7 @@ try:
     the adapters for Date and Range.
 
     >>> db.mogrify("insert into my_table (range) values (%s);", 
-                   timestring.Range("next week"))
+                   timestr.Range("next week"))
     "insert into my_table (range) values (tstzrange('2014-03-03 00:00:00'::timestamptz, '2014-03-10 00:00:00'::timestamptz));"
     """ 
     from psycopg2.extensions import register_adapter
@@ -52,12 +52,12 @@ except ImportError:
 
 
 def findall(text):
-    """Find all the timestrings within a block of text.
+    """Find all the timestrs within a block of text.
 
-    >>> timestring.findall("once upon a time, about 3 weeks ago, there was a boy whom was born on august 15th at 7:20 am. epic.")
+    >>> timestr.findall("once upon a time, about 3 weeks ago, there was a boy whom was born on august 15th at 7:20 am. epic.")
     [
-     ('3 weeks ago,', <timestring.Date 2014-02-09 00:00:00 4483019280>),
-     ('august 15th at 7:20 am', <timestring.Date 2014-08-15 07:20:00 4483019344>)
+     ('3 weeks ago,', <timestr.Date 2014-02-09 00:00:00 4483019280>),
+     ('august 15th at 7:20 am', <timestr.Date 2014-08-15 07:20:00 4483019344>)
     ]
     """
     results = TIMESTRING_RE.findall(text)
@@ -95,11 +95,11 @@ def now():
 
 
 def main():
-    parser = argparse.ArgumentParser(prog='timestring',
+    parser = argparse.ArgumentParser(prog='timestr',
                                      add_help=True,
                                      formatter_class=argparse.RawDescriptionHelpFormatter,
                                      epilog=""" """)
-    parser.add_argument('--version', action='version', version="timestring v%s - http://github.com/stevepeak/timestring" % version)
+    parser.add_argument('--version', action='version', version="timestr v%s - http://github.com/stevepeak/timestr" % version)
     parser.add_argument('-d', '--date', action='store_true')
     parser.add_argument('--verbose', '-v', action="store_true", help="Verbose mode")
     parser.add_argument('args', nargs="+", help="Time input")
